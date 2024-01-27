@@ -1,0 +1,12 @@
+Cognito: PhotoGalleryUserPool
+UserPoolID: us-east-1_0Yu5WIlYN
+ARN: arn:aws:cognito-idp:us-east-1:790556988788:userpool/us-east-1_0Yu5WIlYN
+ClientID: 1873qtluhr4m9769hjfmc31s1g
+
+
+API URL: https://tf5xhqutua.execute-api.us-east-1.amazonaws.com/dev
+
+
+
+
+Last Stopped: 5. Create IAM Roles
