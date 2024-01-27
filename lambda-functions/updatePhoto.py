@@ -14,14 +14,17 @@ def lambda_handler(event, context):
         tags=event['body-json']['tags']
 
         table.update_item(
-        Item={                        
+        Key={                        
                 "PhotoID": str(photoID),
-                "CreationTime": int(photoID),
-                "Title": title,
-                "Description": description,
-                "Tags": tags,
+                "CreationTime": int(photoID)
+            },
+            UpdateExpression='SET Title = :t, Description = :d, Tags = :tag',
+            ExpressionAttributeValues = {
+                ':t': title,
+                ':d': description,
+                ':tag': tags
             }
-        )
+            )
                     
         return {
             "statusCode": 200,
@@ -29,5 +32,10 @@ def lambda_handler(event, context):
         }
     except:
         return {
-            "error": "Something went wrong!"
+            "error": "Something went wrong!",
+            "PhotoID": str(photoID),
+            "CreationTime": int(photoID),
+            "Title": title,
+            "Description": description,
+            "Tags": tags,
         }
